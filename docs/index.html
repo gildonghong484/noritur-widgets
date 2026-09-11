@@ -1,0 +1,102 @@
+<!doctype html>
+<html lang="ko">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>놀이터 스포츠 위젯 데모</title>
+<meta name="description" content="스크립트 한 줄로 블로그에 붙이는 스포츠 위젯 데모. 라이브스코어, 리그 순위표, 프로토 회차 리포트, 주간 이변 지수를 실제로 동작하는 상태로 볼 수 있습니다.">
+<link rel="canonical" href="https://gildonghong484.github.io/noritur-widgets/">
+<style>
+:root{color-scheme:light}
+*{box-sizing:border-box}
+body{margin:0;background:#f6f6f7;color:#1c1c1e;font-family:system-ui,-apple-system,"Apple SD Gothic Neo","Malgun Gothic",sans-serif;line-height:1.55}
+header{background:#111;color:#fff;padding:40px 16px}
+header .in{max-width:880px;margin:0 auto}
+header h1{margin:0 0 8px;font-size:26px}
+header p{margin:0;color:#c7c7cc}
+header a{color:#fff}
+main{max-width:880px;margin:0 auto;padding:24px 16px 64px}
+nav{display:flex;flex-wrap:wrap;gap:8px;margin:0 0 28px}
+nav a{display:inline-block;padding:6px 12px;border-radius:999px;background:#fff;border:1px solid #d9d9de;color:#1c1c1e;text-decoration:none;font-size:14px}
+section{margin:0 0 44px}
+section h2{margin:0 0 6px;font-size:20px}
+section p.d{margin:0 0 14px;color:#555}
+.w{background:#fff;border:1px solid #e3e3e8;border-radius:12px;padding:12px}
+.w > a{display:block;margin-top:6px;font-size:12px;color:#777;text-decoration:none;text-align:right}
+details{margin-top:10px}
+summary{cursor:pointer;font-size:14px;color:#333}
+pre{margin:8px 0 0;padding:12px;background:#111;color:#e5e5ea;border-radius:8px;font-size:12px;overflow-x:auto;white-space:pre-wrap;word-break:break-all}
+footer{max-width:880px;margin:0 auto;padding:0 16px 40px;color:#666;font-size:13px}
+footer a{color:#1c1c1e}
+</style>
+</head>
+<body>
+<header><div class="in">
+<h1>놀이터 스포츠 위젯 데모</h1>
+<p>아래 위젯은 전부 <a href="https://nrt.cx">놀이터 nrt.cx</a> 에서 실시간으로 가져오는 실제 데이터입니다. 코드는 <a href="https://github.com/gildonghong484/noritur-widgets">GitHub 저장소</a>에 있습니다.</p>
+</div></header>
+<main>
+<nav>
+<a href="#live">라이브스코어</a>
+<a href="#standings">리그 순위표</a>
+<a href="#proto">프로토 회차 리포트</a>
+<a href="#upsets">주간 이변 지수</a>
+</nav>
+
+<section id="live">
+<h2>라이브스코어</h2>
+<p class="d">축구·농구·야구·아이스하키·NFL·배구·럭비. 종목 탭은 위젯 안에서 바꿀 수 있고, <code>data-sport</code> 로 시작 탭을 정합니다.</p>
+<div class="w">
+<script src="https://nrt.cx/embed.js" data-widget="live" data-sport="soccer" data-theme="light"></script>
+<a href="https://nrt.cx/p/sports/live">축구 실시간 라이브스코어 - 놀이터</a>
+</div>
+<details><summary>이 위젯 코드 보기</summary>
+<pre>&lt;script src="https://nrt.cx/embed.js" data-widget="live" data-sport="soccer" data-theme="light"&gt;&lt;/script&gt;
+&lt;a href="https://nrt.cx/p/sports/live"&gt;축구 실시간 라이브스코어 - 놀이터&lt;/a&gt;</pre>
+</details>
+</section>
+
+<section id="standings">
+<h2>리그 순위표</h2>
+<p class="d">유럽 5대 리그 + K리그1 + J리그. <code>data-leagues</code> 에 별칭을 쉼표로 넣으면 원하는 리그만 탭으로 나옵니다.</p>
+<div class="w">
+<script src="https://nrt.cx/embed.js" data-widget="standings" data-leagues="epl,laliga,seriea,bundesliga,ligue1,kleague,jleague" data-theme="light"></script>
+<a href="https://nrt.cx/p/sports/league/4328">프리미어리그 순위표 - 놀이터</a>
+</div>
+<details><summary>이 위젯 코드 보기</summary>
+<pre>&lt;script src="https://nrt.cx/embed.js" data-widget="standings" data-leagues="epl,laliga,seriea,bundesliga,ligue1,kleague,jleague" data-theme="light"&gt;&lt;/script&gt;
+&lt;a href="https://nrt.cx/p/sports/league/4328"&gt;프리미어리그 순위표 - 놀이터&lt;/a&gt;</pre>
+</details>
+</section>
+
+<section id="proto">
+<h2>프로토 회차 리포트</h2>
+<p class="d">이번 회차 고정배당이 시장 공정배당보다 평균 몇 % 낮은지, 격차가 가장 작은 선택 TOP 5. 회차가 바뀌면 자동 갱신.</p>
+<div class="w">
+<script src="https://nrt.cx/embed.js" data-widget="proto" data-theme="light"></script>
+<a href="https://nrt.cx/p/proto/report">프로토 회차 리포트 - 놀이터</a>
+</div>
+<details><summary>이 위젯 코드 보기</summary>
+<pre>&lt;script src="https://nrt.cx/embed.js" data-widget="proto" data-theme="light"&gt;&lt;/script&gt;
+&lt;a href="https://nrt.cx/p/proto/report"&gt;프로토 회차 리포트 - 놀이터&lt;/a&gt;</pre>
+</details>
+</section>
+
+<section id="upsets">
+<h2>주간 이변 지수</h2>
+<p class="d">이번 주 시장 우세가 빗나간 경기 비율과 최대 이변 TOP 5. 매주 자동 갱신.</p>
+<div class="w">
+<script src="https://nrt.cx/embed.js" data-widget="upsets" data-theme="light"></script>
+<a href="https://nrt.cx/p/sports/upsets">주간 배당 이변 지수 - 놀이터</a>
+</div>
+<details><summary>이 위젯 코드 보기</summary>
+<pre>&lt;script src="https://nrt.cx/embed.js" data-widget="upsets" data-theme="light"&gt;&lt;/script&gt;
+&lt;a href="https://nrt.cx/p/sports/upsets"&gt;주간 배당 이변 지수 - 놀이터&lt;/a&gt;</pre>
+</details>
+</section>
+</main>
+<footer>
+데이터와 위젯 제공: <a href="https://nrt.cx">놀이터 nrt.cx</a> · 경기 분석 블로그 <a href="https://noritur.com">noritur.com</a> · 코드 <a href="https://github.com/gildonghong484/noritur-widgets">MIT</a>
+</footer>
+</body>
+</html>
