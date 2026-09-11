@@ -4,7 +4,7 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>놀이터 스포츠 위젯 데모</title>
-<meta name="description" content="스크립트 한 줄로 블로그에 붙이는 스포츠 위젯 데모. 라이브스코어, 리그 순위표, 프로토 회차 리포트, 주간 이변 지수를 실제로 동작하는 상태로 볼 수 있습니다.">
+<meta name="description" content="스크립트 한 줄로 블로그에 붙이는 스포츠 위젯 데모. 라이브스코어, 리그 순위표, 프로토 회차 리포트, 주간 이변 지수, 배당 계산기를 실제로 동작하는 상태로 볼 수 있습니다.">
 <link rel="canonical" href="https://gildonghong484.github.io/noritur-widgets/">
 <style>
 :root{color-scheme:light}
@@ -41,6 +41,7 @@ footer a{color:#1c1c1e}
 <a href="#standings">리그 순위표</a>
 <a href="#proto">프로토 회차 리포트</a>
 <a href="#upsets">주간 이변 지수</a>
+<a href="#calc">배당 계산기</a>
 </nav>
 
 <section id="live">
@@ -92,6 +93,28 @@ footer a{color:#1c1c1e}
 <details><summary>이 위젯 코드 보기</summary>
 <pre>&lt;script src="https://nrt.cx/embed.js" data-widget="upsets" data-theme="light"&gt;&lt;/script&gt;
 &lt;a href="https://nrt.cx/p/sports/upsets"&gt;주간 배당 이변 지수 - 놀이터&lt;/a&gt;</pre>
+</details>
+</section>
+
+<section id="calc">
+<h2>배당 계산기</h2>
+<p class="d">조합·변환·양방·헤지·ROI·마진·EV·켈리 8종. <code>data-tool</code> 로 고르고, <code>data-odds</code> 같은 프리필 속성을 주면 값이 채워진 채로 열립니다. 아래는 배당 1.85, 2.10, 1.50 을 미리 넣은 조합 계산기.</p>
+<div class="w">
+<script src="https://nrt.cx/embed.js" data-widget="calc" data-tool="parlay" data-odds="1.85,2.10,1.50" data-theme="light"></script>
+<a href="https://nrt.cx/p/calc/parlay">조합(폴더) 배당 계산기 - 놀이터</a>
+</div>
+<details><summary>이 위젯 코드 보기</summary>
+<pre>&lt;script src="https://nrt.cx/embed.js" data-widget="calc" data-tool="parlay" data-odds="1.85,2.10,1.50" data-theme="light"&gt;&lt;/script&gt;
+&lt;a href="https://nrt.cx/p/calc/parlay"&gt;조합(폴더) 배당 계산기 - 놀이터&lt;/a&gt;</pre>
+</details>
+<p class="d" style="margin-top:14px">같은 방식으로 양방 계산기(다크 테마).</p>
+<div class="w" style="background:#0c0a09;border-color:#292524">
+<script src="https://nrt.cx/embed.js" data-widget="calc" data-tool="arb" data-odds="2.10,3.40,3.60" data-theme="dark"></script>
+<a href="https://nrt.cx/p/calc/arb">양방(아비트리지) 계산기 - 놀이터</a>
+</div>
+<details><summary>이 위젯 코드 보기</summary>
+<pre>&lt;script src="https://nrt.cx/embed.js" data-widget="calc" data-tool="arb" data-odds="2.10,3.40,3.60" data-theme="dark"&gt;&lt;/script&gt;
+&lt;a href="https://nrt.cx/p/calc/arb"&gt;양방(아비트리지) 계산기 - 놀이터&lt;/a&gt;</pre>
 </details>
 </section>
 </main>

@@ -1,6 +1,6 @@
 # noritur-widgets
 
-스크립트 한 줄로 블로그·홈페이지에 붙이는 스포츠 위젯 모음입니다. 데이터는 [놀이터 nrt.cx](https://nrt.cx)가 실시간으로 갱신하고, 위젯은 iframe 으로 렌더링되며 높이가 내용에 맞춰 자동으로 조절됩니다. 가입, API 키, 설치 없음.
+스크립트 한 줄로 블로그·홈페이지에 붙이는 스포츠 위젯 모음입니다. 라이브스코어, 리그 순위표, 회차 리포트, 이변 지수, 배당 계산기 8종. 데이터는 [놀이터 nrt.cx](https://nrt.cx)가 실시간으로 갱신하고, 위젯은 iframe 으로 렌더링되며 높이가 내용에 맞춰 자동으로 조절됩니다. 가입, API 키, 설치 없음.
 
 **[데모 페이지에서 실제 동작 보기](https://gildonghong484.github.io/noritur-widgets/)**
 
@@ -10,6 +10,7 @@
 | 리그 순위표 | 최대 8개 리그 탭 (EPL, 라리가, 세리에A, 분데스리가, 리그1, K리그1, J리그, KBO 등) | 매일 |
 | 프로토 회차 리포트 | 이번 회차 고정배당과 시장 공정배당의 평균 격차, 격차가 가장 작은 선택 TOP 5 | 회차마다 |
 | 주간 이변 지수 | 이번 주 시장 우세가 빗나간 비율과 최대 이변 경기 TOP 5 | 매주 |
+| 배당 계산기 | 조합·변환·양방·헤지·ROI·마진·EV·켈리 8종. 방문자가 값을 넣으면 그 자리에서 계산 | 즉시 |
 
 ## 빠른 시작
 
@@ -75,6 +76,29 @@
 ```html
 <script src="https://nrt.cx/embed.js" data-widget="upsets" data-theme="light"></script>
 <a href="https://nrt.cx/p/sports/upsets">주간 배당 이변 지수 - 놀이터</a>
+```
+
+### 5. 배당 계산기 `data-widget="calc"`
+
+![배당 계산기 위젯](docs/calc.png)
+
+```html
+<script src="https://nrt.cx/embed.js" data-widget="calc" data-tool="parlay" data-theme="light"></script>
+<a href="https://nrt.cx/p/calc/parlay">조합(폴더) 배당 계산기 - 놀이터</a>
+```
+
+| 속성 | 값 | 기본 |
+|---|---|---|
+| `data-tool` | `parlay` 조합 · `odds` 배당 변환 · `arb` 양방 · `hedge` 헤지 · `roi` 수익률 · `margin` 북 마진 · `ev` 기대값 · `kelly` 켈리 | `parlay` |
+| `data-theme` | `light` `dark` | `light` |
+| `data-height` | 고정 높이(px) | 자동 |
+| 프리필 | `data-odds="1.85,2.1"` `data-stake` `data-dec` `data-total` `data-stake0` `data-odd0` `data-hedge` `data-prob` | 비움 |
+
+프리필 속성을 주면 값이 채워진 채로 열립니다. 예를 들어 경기 분석 글 안에 그 경기 배당을 넣은 양방 계산기를 붙일 수 있습니다.
+
+```html
+<script src="https://nrt.cx/embed.js" data-widget="calc" data-tool="arb" data-odds="2.10,3.40,3.60" data-theme="light"></script>
+<a href="https://nrt.cx/p/calc/arb">양방(아비트리지) 계산기 - 놀이터</a>
 ```
 
 ## 자주 묻는 것
